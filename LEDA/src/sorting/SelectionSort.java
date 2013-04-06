@@ -28,7 +28,15 @@ public class SelectionSort<T extends Comparable<T>> implements Sorting<T> {
 			Util.swap(array, index, i);
 		}
 	}
-	
+
+	/**
+	 * Find the smallest element into the array.
+	 * 
+	 * @param beginIndex the index of begin search.
+	 * @param array an array 
+	 * 
+	 * @return the position of the smallest value.
+	 */
 	public int smallest(int beginIndex , T[] array){
 		int smallestIndex = beginIndex;
 		for(int i = beginIndex + 1; i< array.length; i++){
@@ -38,6 +46,8 @@ public class SelectionSort<T extends Comparable<T>> implements Sorting<T> {
 		}
 		return smallestIndex;
 	}
+	
+
 	
 	
 	public String toString(T[] array){
