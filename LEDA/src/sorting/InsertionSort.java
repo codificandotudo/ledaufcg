@@ -72,24 +72,5 @@ public class InsertionSort<T extends Comparable<T>> implements Sorting<T> {
 	public boolean less(T[]array, T key, int index){
 		return (array[index].compareTo(key) > 0); 
 	}
-
-	/**
-	 * To String in the array.
-	 * 
-	 * @param array an array.
-	 * 
-	 * @return an String representing the array.
-	 */
-	public String toString(T[] array){
-		StringBuilder build = new StringBuilder();
-		build.append("[");
-		for (int i=0; i < array.length; i++){
-			build.append(String.valueOf(array[i]));
-			if (i < array.length -1) build.append(", ");			
-		}
-			
-		build.append("]");
-		return build.toString();
-	}
 		
 }

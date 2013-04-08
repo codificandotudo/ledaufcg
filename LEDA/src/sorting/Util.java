@@ -22,6 +22,27 @@ public class Util {
 		array[i] = array[j];
 		array[j] = temp;
 	}
+	
+
+	/**
+	 * To String in the array.
+	 * 
+	 * @param array an array.
+	 * 
+	 * @return an String representing the array.
+	 */
+	public static String toString(Object[] array){
+		StringBuilder build = new StringBuilder();
+		build.append("[");
+		for (int i=0; i < array.length; i++){
+			build.append(String.valueOf(array[i]));
+			if (i < array.length -1) build.append(", ");			
+		}
+			
+		build.append("]");
+		return build.toString();
+	}
+
 
 	
 	// Instantiates a Generic Type

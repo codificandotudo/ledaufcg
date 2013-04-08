@@ -46,21 +46,5 @@ public class SelectionSort<T extends Comparable<T>> implements Sorting<T> {
 		}
 		return smallestIndex;
 	}
-	
 
-	
-	
-	public String toString(T[] array){
-		StringBuilder build = new StringBuilder();
-		build.append("[");
-		for (int i=0; i < array.length; i++){
-			build.append(String.valueOf(array[i]));
-			if (i < array.length -1) build.append(", ");			
-		}
-			
-		build.append("]");
-		return build.toString();
-	}
-	
-	
 }
