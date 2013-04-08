@@ -1,22 +1,26 @@
 package sorting;
 
 /**
+ * The first sort that many people learn, because it is so simple, is bubble
+ * sort: Keep passing through the file, exchanging adjacent elements that
+ * are out of order, continuing until the array is sort.
  * 
- * @author Home
- *
+ * For each i for 1 to right-1, the inner (j) loop puts the minimum element
+ * among the elements in a[i], ..., a[right] into a[i] by passing from right
+ * to left through elements, compare-exchanging successive elements.
+ * 
+ * The smallest one moves on all such comparisons, so it "bubbles" to the beginning.
+ * As in  selection sort, as the index i travels from left to right
+ * through the array, the elements to its left are in their final position in 
+ * the array.
+ * 
+ * @version 1.0 2013/04/08
+ * @author Samuel T. C. Santos
+ * 
+ * @see <a href="http://code.google.com/p/ledaufcg/">Selection Sort</a>
+ * 
  * @param <T>
  * 
- * Bubble sort execution:
- *       
- * i=1 [ 2, 4, 6, 7, 3, 1, 0, 8, 5, 9, -1]
- *     [ -1, 2, 4, 6, 3, 7, 0, 1, 5, 9, 8] j=10
- *          
- * i=2 [ -1, 2, 4, 6, 3, 7, 0, 1, 5, 9, 8]
- *     [ -1, 0, 2, 4, 6, 3, 7, 1, 5, 8, 9] j=9
- *     
- * i=3 [ -1, 0, 2, 4, 6, 3, 7, 1, 5, 8, 9]
- *     [ -1, 0, 2, 1, 4, 6, 3, 7, 5, 8, 9] j=8
- *     
  *     
  */
 public class BubbleSort<T extends Comparable<T>> implements Sorting<T> {
