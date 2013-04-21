@@ -322,6 +322,39 @@ public class BSTTest {
 	
 	@Test
 	public void testPredecessor(){
-		
+	    assertEquals(null, bst.predecessor(0).getData());
+        bst.insert(5);
+           
+        assertEquals(null, bst.predecessor(5).getData());
+        
+        bst.insert(13);
+        
+        assertEquals(new Integer(5), bst.predecessor(13).getData());
+          
+        bst.insert(-1);
+        assertEquals(new Integer(-1), bst.predecessor(5).getData());
+        assertEquals(null, bst.predecessor(-1).getData());
+           
+        bst.insert(9);
+        assertEquals(new Integer(5), bst.predecessor(9).getData());
+        
+        bst.insert(7);
+        assertEquals(new Integer(7), bst.predecessor(9).getData());
+           
+        bst.insert(0);
+        assertEquals(new Integer(-1), bst.predecessor(0).getData());
+           
+        bst.insert(4);
+        assertEquals(new Integer(4), bst.predecessor(5).getData());
+        
+        bst.insert(-3);
+        assertEquals(new Integer(-3), bst.predecessor(-1).getData());
+        
+        bst.insert(12);
+        assertEquals(new Integer(12), bst.predecessor(13).getData());
+        
+        bst.insert(21);
+        assertEquals(new Integer(13), bst.predecessor(21).getData());
+        
 	}
 }
