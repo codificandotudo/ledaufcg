@@ -198,6 +198,39 @@ public class BSTTest {
 	@Test
 	public void testOrderWalk(){
 
+        bst.insert(7);
+        assertArrayEquals(new Integer[]{7}, bst.preOrder());
+
+        bst.insert(5);
+        assertArrayEquals(new Integer[]{5,7}, bst.order());
+
+        bst.insert(11);
+        assertArrayEquals(new Integer[]{5,7,11}, bst.order());
+        
+        bst.insert(31);
+        assertArrayEquals(new Integer[]{5,7,11,31}, bst.order());
+    
+        bst.insert(-1);
+        assertArrayEquals(new Integer[]{-1,5,7,11,31}, bst.order());
+    
+        bst.insert(6);
+        assertArrayEquals(new Integer[]{-1,5,6,7,11,31}, bst.order());
+    
+        bst.insert(9);
+        assertArrayEquals(new Integer[]{-1,5,6,7,9,11,31}, bst.order());
+
+        bst.insert(17);
+        assertArrayEquals(new Integer[]{-1,5,6,7,9,11,17,31}, bst.order());
+
+        bst.insert(3);
+        assertArrayEquals(new Integer[]{-1,3,5,6,7,9,11,17,31}, bst.order());
+        
+        bst.insert(21);
+        assertArrayEquals(new Integer[]{-1,3,5,6,7,9,11,17,21,31}, bst.order());
+
+        bst.insert(15);
+        assertArrayEquals(new Integer[]{-1,3,5,6,7,9,11,15,17,21,31}, bst.order());
+
 	}
 
 	@Test
