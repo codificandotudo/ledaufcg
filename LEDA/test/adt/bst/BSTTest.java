@@ -81,8 +81,7 @@ public class BSTTest {
 		assertArrayEquals(new Integer[]{}, bst.order());
 
 	}
-	
-	
+		
 	@Test
 	public void testSearch(){
 		int[] keys = {8,4,12,2,6,10,14,1,0,3,5,7,9,11,13,15,-1};
@@ -172,7 +171,35 @@ public class BSTTest {
 	
 	@Test
 	public void testOrderWalk(){
-		
+
+        bst.insert(7);
+        assertArrayEquals(new Integer[]{7}, bst.order());
+
+        bst.insert(5);
+        assertArrayEquals(new Integer[]{7, 5}, bst.order());
+
+        bst.insert(11);
+        assertArrayEquals(new Integer[]{7, 5,11}, bst.order());
+
+
+        bst.insert(31);
+        assertArrayEquals(new Integer[]{7, 5,11, 31}, bst.order());
+
+        bst.insert(-1);
+        assertArrayEquals(new Integer[]{7, 5,-1,11, 31}, bst.order());
+        
+        bst.insert(6);
+        assertArrayEquals(new Integer[]{7, 5,-1,6,11, 31}, bst.order());
+
+        bst.insert(9);
+        assertArrayEquals(new Integer[]{7, 5,-1,6,11,9,31}, bst.order());
+        
+        bst.insert(17);
+        assertArrayEquals(new Integer[]{7, 5,-1,6,11,9,31,17}, bst.order());
+
+        bst.insert(3);
+        assertArrayEquals(new Integer[]{7, 5,-1,3,6,11,9,31,17}, bst.order());
+
 	}
 
 	@Test
