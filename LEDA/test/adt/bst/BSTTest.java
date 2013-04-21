@@ -166,45 +166,70 @@ public class BSTTest {
 	
 	@Test
 	public void testPreOrderWalk(){
+        bst.insert(7);
+        assertArrayEquals(new Integer[]{7}, bst.preOrder());
+
+        bst.insert(5);
+        assertArrayEquals(new Integer[]{7, 5}, bst.preOrder());
+
+        bst.insert(11);
+        assertArrayEquals(new Integer[]{7, 5,11}, bst.preOrder());
+
+        bst.insert(31);
+        assertArrayEquals(new Integer[]{7, 5,11, 31}, bst.preOrder());
+
+        bst.insert(-1);
+        assertArrayEquals(new Integer[]{7, 5,-1,11, 31}, bst.preOrder());
+        
+        bst.insert(6);
+        assertArrayEquals(new Integer[]{7, 5,-1,6,11, 31}, bst.preOrder());
+
+        bst.insert(9);
+        assertArrayEquals(new Integer[]{7, 5,-1,6,11,9,31}, bst.preOrder());
+        
+        bst.insert(17);
+        assertArrayEquals(new Integer[]{7, 5,-1,6,11,9,31,17}, bst.preOrder());
+
+        bst.insert(3);
+        assertArrayEquals(new Integer[]{7, 5,-1,3,6,11,9,31,17}, bst.preOrder());
 		
 	}
 	
 	@Test
 	public void testOrderWalk(){
 
-        bst.insert(7);
-        assertArrayEquals(new Integer[]{7}, bst.order());
-
-        bst.insert(5);
-        assertArrayEquals(new Integer[]{7, 5}, bst.order());
-
-        bst.insert(11);
-        assertArrayEquals(new Integer[]{7, 5,11}, bst.order());
-
-
-        bst.insert(31);
-        assertArrayEquals(new Integer[]{7, 5,11, 31}, bst.order());
-
-        bst.insert(-1);
-        assertArrayEquals(new Integer[]{7, 5,-1,11, 31}, bst.order());
-        
-        bst.insert(6);
-        assertArrayEquals(new Integer[]{7, 5,-1,6,11, 31}, bst.order());
-
-        bst.insert(9);
-        assertArrayEquals(new Integer[]{7, 5,-1,6,11,9,31}, bst.order());
-        
-        bst.insert(17);
-        assertArrayEquals(new Integer[]{7, 5,-1,6,11,9,31,17}, bst.order());
-
-        bst.insert(3);
-        assertArrayEquals(new Integer[]{7, 5,-1,3,6,11,9,31,17}, bst.order());
-
 	}
 
 	@Test
 	public void testPostOrderWalk(){
-		
+        bst.insert(7);
+        assertArrayEquals(new Integer[]{7}, bst.postOrder());
+
+        bst.insert(5);
+        assertArrayEquals(new Integer[]{5,7}, bst.postOrder());
+
+        
+        bst.insert(11);
+        assertArrayEquals(new Integer[]{5,11,7}, bst.postOrder());
+
+        bst.insert(31);
+        assertArrayEquals(new Integer[]{5,31,11,7}, bst.postOrder());
+
+        
+        bst.insert(-1);
+        assertArrayEquals(new Integer[]{-1,5,31,11,7}, bst.postOrder());
+       
+        bst.insert(6);
+        bst.insert(9);
+        bst.insert(17);
+        bst.insert(3);
+        bst.insert(21);
+        bst.insert(15);
+       
+        Integer [] post = {3, -1, 6, 5, 9, 15, 21, 17, 31, 11, 7};
+
+        assertArrayEquals(post, bst.postOrder());
+
 	}	
 	
 }
