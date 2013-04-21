@@ -22,7 +22,7 @@ public class BSTTest {
 		Assert.assertTrue(bst.height() == -1);
 		Assert.assertNotNull(bst.getRoot());
 		Assert.assertNull(bst.getRoot().getData());
-		Assert.assertNull(bst.getRoot().getParent());
+		Assert.assertNotNull(bst.getRoot().getParent());
 		Assert.assertNull(bst.getRoot().getLeft());
 		Assert.assertNull(bst.getRoot().getRight());	
 	}
@@ -111,7 +111,16 @@ public class BSTTest {
 	
 	@Test 
 	public void testMinimum(){
+		int[] keys = {8,4,12,2,6,10,14,1,0,3,5,7,9,11,13,15,-1};
 		
+		for (int i : keys) {
+			bst.insert(i);
+		}
+		assertEquals(new Integer(-1), bst.minimum().getData());
+		bst.remove(-1);
+		assertEquals(new Integer(0), bst.minimum().getData());
+		bst.remove(0);
+		assertEquals(new Integer(1), bst.minimum().getData());
 	}
 	
 	@Test
@@ -265,4 +274,54 @@ public class BSTTest {
 
 	}	
 	
+	@Test
+	public void testSuccessor(){
+	
+        assertEquals(null, bst.sucessor(0).getData());
+        bst.insert(5);
+           
+        assertEquals(null, bst.sucessor(5).getData());
+        
+        bst.insert(13);
+        
+        assertEquals(new Integer(13), bst.sucessor(5).getData());
+        assertEquals(null, bst.sucessor(13).getData());
+             
+   
+        bst.insert(-1);
+        assertEquals(new Integer(5), bst.sucessor(-1).getData());
+        assertEquals(new Integer(13), bst.sucessor(5).getData());
+           
+        bst.insert(9);
+        assertEquals(new Integer(13), bst.sucessor(9).getData());
+        
+        bst.insert(7);
+        assertEquals(new Integer(9), bst.sucessor(7).getData());
+        
+           
+        bst.insert(0);
+        assertEquals(new Integer(5), bst.sucessor(0).getData());
+        
+           
+        bst.insert(4);
+        assertEquals(new Integer(5), bst.sucessor(4).getData());
+        
+        bst.insert(-3);
+        assertEquals(new Integer(-1), bst.sucessor(-3).getData());
+        
+           
+        bst.insert(12);
+        assertEquals(new Integer(12), bst.sucessor(9).getData());
+        
+        bst.insert(21);
+        assertEquals(new Integer(21), bst.sucessor(13).getData());
+        
+        assertEquals(null, bst.sucessor(21).getData());
+        
+	}
+	
+	@Test
+	public void testPredecessor(){
+		
+	}
 }
