@@ -56,6 +56,30 @@ public class BSTTest {
 		}
 		assertArrayEquals(new Integer[]{2,3,4,6,7,9,13,15}, bst.order());
 		
+		bst.remove(15);
+		assertArrayEquals(new Integer[]{2,3,4,6,7,9,13}, bst.order());
+		
+		bst.remove(13);
+		assertArrayEquals(new Integer[]{2,3,4,6,7,9}, bst.order());
+		
+		bst.remove(9);
+		assertArrayEquals(new Integer[]{2,3,4,6,7}, bst.order());
+		
+		bst.remove(7);
+		assertArrayEquals(new Integer[]{2,3,4,6}, bst.order());
+		
+		bst.remove(6);
+		assertArrayEquals(new Integer[]{2,3,4}, bst.order());
+		
+		bst.remove(4);
+		assertArrayEquals(new Integer[]{2,3}, bst.order());
+
+		bst.remove(3);
+		assertArrayEquals(new Integer[]{2}, bst.order());
+		
+		bst.remove(2);
+		assertArrayEquals(new Integer[]{}, bst.order());
+
 	}
 	
 	
