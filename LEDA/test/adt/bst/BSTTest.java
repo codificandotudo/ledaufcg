@@ -130,12 +130,39 @@ public class BSTTest {
 	
 	@Test
 	public void testHeight(){
+		assertEquals(-1, bst.height());
 		
+		bst.insert(11);
+		assertEquals(0, bst.height());
+		
+		bst.insert(9);
+		assertEquals(1, bst.height());
+		
+		bst.insert(13);
+		assertEquals(1, bst.height());
+		
+		bst.insert(15);
+		assertEquals(2, bst.height());
+		
+		bst.insert(17);
+		assertEquals(3, bst.height());
+		
+		bst.remove(17);
+		assertEquals(2, bst.height());
+		bst.remove(15);
+		bst.remove(13);
+		bst.remove(9);
+		bst.remove(11);
+		assertEquals(-1, bst.height());
 	}
 	
 	@Test
 	public void testSize(){
-		
+		assertEquals(0, bst.size());
+		bst.insert(9);
+		assertEquals(1, bst.size());
+		bst.insert(5);
+		assertEquals(2, bst.size());
 	}
 	
 	@Test
