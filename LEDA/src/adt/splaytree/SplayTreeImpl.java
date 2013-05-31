@@ -11,8 +11,8 @@ public class SplayTreeImpl<T extends Comparable<T>> extends AVLTreeImpl<T> imple
 		//implemented in AVLTreeImpl
 	}
 	
-	@Override
-	protected void insert(BSTNode<T> node, T value) {
-		//override this method to perform splay when inserting a new data into the tree
-	}
+	//@Override
+//	protected void insert(BSTNode<T> node, T value) {
+//		//override this method to perform splay when inserting a new data into the tree
+//	}
 }

@@ -26,16 +26,18 @@ public class StackRecursiveDoubleLinkedListImpl<T> implements Stack<T> {
 		if (isEmpty())
 			throw new StackUnderflowException();
 		
-		T element = list.getFirst();
-		
-		list.removeFirst();
-		
-		return element;
+//		T element = list.;
+//		
+//		list.removeFirst();
+//		
+//		return element;
+		return null;
 	}
 
 	@Override
 	public T top() {
-		return list.getFirst();
+		//return list.getFirst();
+		return null;
 	}
 
 	@Override
