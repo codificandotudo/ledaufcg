@@ -1,4 +1,4 @@
-package adt.stack;
+package adt.linkedList.stack;
 
 import adt.linkedList.DoubleLinkedList;
 import adt.linkedList.RecursiveDoubleLinkedListImpl;

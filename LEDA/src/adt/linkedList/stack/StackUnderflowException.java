@@ -1,4 +1,4 @@
-package adt.stack;
+package adt.linkedList.stack;
 
 public class StackUnderflowException extends Exception {
 
